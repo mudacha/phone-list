@@ -1,14 +1,43 @@
+<ion-view view-title="Items">
+  <ion-content class="padding">
+    <ion-list>
+
+      <ion-checkbox ng-repeat="item in items" ng-model="item.checked" ng-checked="item.checked">
+        <span ng-class="{checked :item.checked}">{{item.name}}</span>
+      </ion-checkbox>
+
+      <form name="frm" novalidate>
+
+        <label class="item item-input">
+          <input type="text" placeholder="Type in stuff you want on your list here" name="newItem" ng-model="newItem" required/>
+        </label>
+
+        <button ng-click="addListItem(newItem)" class="button icon ion-plus button-positive" ng-disabled="frm.$invalid">Add</button>
+        <button class="button" ng-click="removeSelected()"> Remove Selected</button>
+
+      </form>
+
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
 <!--
   This template loads for the 'tab.friend-detail' state (app.js)
   'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
-  </ion-content>
-</ion-view>
+
+<!--<ion-view view-title="{{chat.name}}">-->
+  <!--<ion-content class="padding">-->
+    <!--<img ng-src="{{chat.face}}" style="width: 64px; height: 64px">-->
+    <!--<p>-->
+      <!--{{chat.lastText}}-->
+    <!--</p>-->
+  <!--</ion-content>-->
+<!--</ion-view>-->
